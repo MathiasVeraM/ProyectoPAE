@@ -57,6 +57,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Poppins-SemiBold.ttf" />
 	  <None Remove="Resources\Images\about_us.png" />
 	  <None Remove="Resources\Images\cerrar_sesion.png" />
 	  <None Remove="Resources\Images\home.png" />
