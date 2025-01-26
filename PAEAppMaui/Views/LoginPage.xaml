@@ -3,10 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PAEAppMaui.Views.LoginPage"
              Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
+            <Label Text="P A E Gram"
+               FontSize="20"
+               HorizontalOptions="Center"
+               TextColor="#3a362b" />
+
+            <Grid ColumnDefinitions="*,*"
+              Padding="10">
+
+                <Image Source="logotipopae.png" Grid.Column="0" Grid.Row="0"/>
+                <Image Source="perrillos.png" Grid.Column="1" Grid.Row="0"/>
+            </Grid>
+
+            <Frame BackgroundColor="#84bc48" Padding="20">
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Correo Electrónico"
+                       HorizontalOptions="Start"
+                       TextColor="#3a362b"/>
+
+                    <Entry Placeholder="Ingrese su correo electrónico"
+                       Keyboard="Text"
+                       FontSize="16"
+                       BackgroundColor="#F2F2F2"
+                       HeightRequest="50" 
+                       x:Name="editor_correo"/>
+
+                    <Label Text="Contraseña"
+                       HorizontalOptions="Start"
+                       TextColor="#3a362b"/>
+
+                    <Entry Placeholder="Ingrese su contraseña"
+                       IsPassword="True"
+                       FontSize="16"
+                       BackgroundColor="#F2F2F2"
+                       HeightRequest="50" 
+                       x:Name="editor_contraseña"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <Label Text="¿No tienes una cuenta? - "
+                           HorizontalOptions="Center"
+                           TextColor="#3a362b">
+                        </Label>
+
+                        <Label Text="Regístrate aquí!"
+                           HorizontalOptions="Center"
+                           TextColor="Blue"
+                           FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                    <Button x:Name="BotonLogin"
+                        Text="Iniciar sesion"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="#374e1d"
+                        TextColor="White"
+                        HeightRequest="50"
+                        Clicked="BotonLogin_Clicked"/>
+
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
