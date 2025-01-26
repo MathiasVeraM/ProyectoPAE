@@ -68,7 +68,7 @@
                             BackgroundColor="#374e1d"
                             TextColor="White"
                             HeightRequest="50"
-                            Command="{}"/>      
+                            Command="{Binding SignInCommand}"/>      
 
 
 
