@@ -1,4 +1,4 @@
-@PAELoginAPI_HostAddress = https://localhost:7115
+@PAELoginAPI_HostAddress = http://localhost:5010
 
 GET {{PAELoginAPI_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -13,5 +13,18 @@ Content-Type: application/json
   "email":"admin@gmail.com",
   "password":"admin123"
 }
+
+###
+
+POST {{PAELoginAPI_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  //User
+}
+
+###
+
+GET {{PAELoginAPI_HostAddress}}/api/users/login/string/string
 
 ###

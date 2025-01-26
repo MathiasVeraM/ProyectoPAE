@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PAEAppMaui.Services;
 
 namespace PAEAppMaui.ViewModels
 {
@@ -11,7 +12,10 @@ namespace PAEAppMaui.ViewModels
         [ObservableProperty]
         private string _password;
 
+        readonly ILoginInterface loginInterface = new LoginService();
+
         [RelayCommand]
+
         public async void SignIn()
         {
 
