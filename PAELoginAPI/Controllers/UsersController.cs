@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using PAELoginAPI.Data;
 using PAELoginAPI.Models;
@@ -105,6 +107,21 @@ namespace PAELoginAPI.Controllers
             return _context.users.Any(e => e.UserId == id);
         }
 
+        [HttpGet("login/{email}/{password}")]
+        public async Task<ActionResult<User>> Login (string email, string password){
+            if(!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
+            {
+                var user = await _context.users.Where(x => x.Email!.Equals(email) && x.Password == password).FirstOrDefaultAsync();
+                if (user != null) { 
+                    return Ok(user);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            return BadRequest();
+        }
 
     }
 }
