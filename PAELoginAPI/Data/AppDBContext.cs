@@ -8,6 +8,6 @@ namespace PAELoginAPI.Data
         public AppDBContext(DbContextOptions<AppDBContext> options) : base (options)
         {            
         }
-        public DbSet<User> users { get; set; }
+        public DbSet<User> users { get; set; } = default!;
     }
 }
