@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
+             x:DataType="viewmodel:LoginPageViewModel"
              x:Class="PAEAppMaui.Views.LoginPage"
              Title="LoginPage">
     <ScrollView>
@@ -25,6 +27,7 @@
                        TextColor="#3a362b"/>
 
                     <Entry Placeholder="Ingrese su correo electrónico"
+                       Text="{Binding Email}"
                        Keyboard="Text"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
@@ -36,6 +39,7 @@
                        TextColor="#3a362b"/>
 
                     <Entry Placeholder="Ingrese su contraseña"
+                       Text="{Binding Password}"
                        IsPassword="True"
                        FontSize="16"
                        BackgroundColor="#F2F2F2"
@@ -49,22 +53,24 @@
                         </Label>
 
                         <Label Text="Regístrate aquí!"
-                           HorizontalOptions="Center"
-                           TextColor="Blue"
-                           FontAttributes="Bold">
+                               HorizontalOptions="Center"
+                               TextColor="Blue"
+                               FontAttributes="Bold">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                                <TapGestureRecognizer Command="{}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </HorizontalStackLayout>
 
                     <Button x:Name="BotonLogin"
-                        Text="Iniciar sesion"
-                        HorizontalOptions="Fill"
-                        BackgroundColor="#374e1d"
-                        TextColor="White"
-                        HeightRequest="50"
-                        Clicked="BotonLogin_Clicked"/>
+                            Text="Iniciar sesion"
+                            HorizontalOptions="Fill"
+                            BackgroundColor="#374e1d"
+                            TextColor="White"
+                            HeightRequest="50"
+                            Command="{}"/>      
+
+
 
 
                 </VerticalStackLayout>
