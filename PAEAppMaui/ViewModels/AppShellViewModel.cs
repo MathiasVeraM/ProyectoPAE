@@ -14,7 +14,6 @@ namespace PAEAppMaui.ViewModels
                 Preferences.Remove(nameof(App.user));
                 await Shell.Current.GoToAsync(nameof(LoginPage));
             }
-            await Shell.Current.GoToAsync("..");
         }
     }
 }

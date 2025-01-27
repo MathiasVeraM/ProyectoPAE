@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
              x:DataType="viewmodel:LoginPageViewModel"
-             x:Class="PAEAppMaui.Views.LoginPage"
-             Title="LoginPage">
+             x:Class="PAEAppMaui.Views.LoginPage">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="#aed089">
             <Label Text="P A E Gram"
@@ -57,7 +56,7 @@
                                TextColor="Blue"
                                FontAttributes="Bold">
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                                <TapGestureRecognizer Command="{Binding GORegisterPageCommand}" />
                             </Label.GestureRecognizers>
                         </Label>
 

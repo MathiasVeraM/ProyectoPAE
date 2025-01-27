@@ -28,3 +28,12 @@ Content-Type: application/json
 GET {{PAELoginAPI_HostAddress}}/api/users/login/string/string
 
 ###
+
+POST {{PAELoginAPI_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  //User
+}
+
+###

@@ -21,6 +21,7 @@ namespace PAEAppMaui
             builder.Services.AddSingleton<AboutPage>();
             builder.Services.AddSingleton<RegisterPage>();
             builder.Services.AddSingleton<LoginPageViewModel>();
+            builder.Services.AddSingleton<RegisterPageViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -23,7 +23,7 @@
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Command="{Binding LogoutCommand}" BackgroundColor="Green" Text="Logout" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+            <Button Command="{Binding LogoutCommand}" BackgroundColor="#374e1d" Text="Logout" TextColor="White" FontAttributes="Bold" FontSize="18"/>
         </StackLayout>
     </Shell.FlyoutFooter>
 </Shell>
