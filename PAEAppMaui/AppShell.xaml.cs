@@ -1,5 +1,4 @@
 ﻿using PAEAppMaui.Views;
-using ProyectoPAE;
 
 namespace PAEAppMaui
 {

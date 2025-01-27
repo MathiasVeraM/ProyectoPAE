@@ -28,14 +28,18 @@ namespace PAEAppMaui.ViewModels
                 if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
                 {
                     User user = await loginInterface.Login(Email, Password);
-                    if (Preferences.ContainsKey(nameof(App.user)))
+                    if(user != null)
                     {
-                        Preferences.Remove(nameof(App.user));
+                        if (Preferences.ContainsKey(nameof(App.user)))
+                        {
+                            Preferences.Remove(nameof(App.user));
+                        }
+                        string userDetails = JsonConvert.SerializeObject(user);
+                        Preferences.Set(nameof(App.user), userDetails);
+                        App.user = user;
+                        await Shell.Current.GoToAsync(nameof(PublicationsPage));
                     }
-                    string userDetails = JsonConvert.SerializeObject(user);
-                    Preferences.Set(nameof(App.user), userDetails);
-                    App.user = user;
-                    await Shell.Current.GoToAsync(nameof(PublicationsPage));
+                    await Shell.Current.DisplayAlert("Error", "El email o contraseña estan equivocados", "Ok");
                 }
                 else
                 {

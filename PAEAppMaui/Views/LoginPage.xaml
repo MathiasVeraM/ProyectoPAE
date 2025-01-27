@@ -51,15 +51,17 @@
                            HorizontalOptions="Center"
                            TextColor="#3a362b">
                         </Label>
-
+                        <!--
                         <Label Text="Regístrate aquí!"
-                               HorizontalOptions="Center"
-                               TextColor="Blue"
-                               FontAttributes="Bold">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{}" />
-                            </Label.GestureRecognizers>
-                        </Label>
+       HorizontalOptions="Center"
+       TextColor="Blue"
+       FontAttributes="Bold">
+    <Label.GestureRecognizers>
+        <TapGestureRecognizer Command="{}" />
+    </Label.GestureRecognizers>
+</Label>
+                        -->
+                        
                     </HorizontalStackLayout>
 
                     <Button x:Name="BotonLogin"
