@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PAEAppMaui.Views;
 
 namespace PAEAppMaui.ViewModels
 {
@@ -11,6 +12,7 @@ namespace PAEAppMaui.ViewModels
             if (Preferences.ContainsKey(nameof(App.user)))
             {
                 Preferences.Remove(nameof(App.user));
+                await Shell.Current.GoToAsync(nameof(LoginPage));
             }
             await Shell.Current.GoToAsync("..");
         }
