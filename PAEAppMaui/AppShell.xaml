@@ -9,15 +9,23 @@
         Title="PAEAppMaui">
 
     <ShellContent
-        Title="Home"
+        Title="Login"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="LoginPage"
+        FlyoutItemIsVisible="False" 
+        Shell.FlyoutBehavior="Disabled"/>
+
+    <ShellContent
+        Title="Registro"
+        ContentTemplate="{DataTemplate views:RegisterPage}"
+        Route="RegisterPage"
         FlyoutItemIsVisible="False" 
         Shell.FlyoutBehavior="Disabled"/>
 
     <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Publicaciones" Icon="home.png" ContentTemplate="{DataTemplate views:PublicationsPage}"></ShellContent>
         <ShellContent Title="Sobre Nosotros" Icon="about_us.png" ContentTemplate="{DataTemplate views:AboutPage}"></ShellContent>
+        <ShellContent Title="Perfil de usuario" Icon="dotnet.png" ContentTemplate="{DataTemplate views:ProfilePage}"></ShellContent>
         
     </FlyoutItem>  
 

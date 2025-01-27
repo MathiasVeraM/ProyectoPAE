@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PAEAppMaui.Views.ProfilePage"
+             Title="Perfil del usuario">
+    <StackLayout Padding="20">
+        <Label Text="Perfil del usuario" FontSize="24" HorizontalOptions="Center" />
+
+        <Label Text="Nombre:" FontSize="18"/>
+        <Label Text="{Binding User.Name}" FontSize="16"/>
+
+        <Label Text="Correo:" FontSize="18"/>
+        <Label Text="{Binding User.Email}" FontSize="16"/>
+
+        <Label Text="Contraseña:" FontSize="18"/>
+        <Label Text="{Binding User.Password}" FontSize="16"/>
+
+        <Button Text="Eliminar Usuario" Command="{Binding DeleteUserCommand}" CommandParameter="{Binding User}" BackgroundColor="#4d1c24" TextColor="White"/>
+        <Button Text="Actualizar Usuario" Command="{Binding UpdateUserCommand}" CommandParameter="{Binding User}" BackgroundColor="#374e1d" TextColor="White"/>
+    </StackLayout>
+</ContentPage>

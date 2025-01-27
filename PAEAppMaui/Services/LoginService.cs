@@ -55,5 +55,64 @@ namespace PAEAppMaui.Services
                 return null;
             }
         }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            try
+            {
+                var cliente = new HttpClient();
+                string localhostUrl = $"http://localhost:5010/api/users/{email}"; // Asumirás que tu API tiene este endpoint
+                cliente.BaseAddress = new Uri(localhostUrl);
+                HttpResponseMessage response = await cliente.GetAsync(cliente.BaseAddress);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    User user = await response.Content.ReadFromJsonAsync<User>();
+                    return user;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", ex.Message, "Ok");
+                return null;
+            }
+        }
+
+        public async Task<bool> DeleteUserAsync(int userId)
+        {
+            try
+            {
+                var cliente = new HttpClient();
+                string localhostUrl = $"http://localhost:5010/api/users/{userId}";
+                var response = await cliente.DeleteAsync(localhostUrl);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateUserAsync(User user)
+        {
+            try
+            {
+                var cliente = new HttpClient();
+                string localhostUrl = $"http://localhost:5010/api/users/{user.UserId}";
+                var json = JsonSerializer.Serialize(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await cliente.PutAsync(localhostUrl, content);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
+                return false;
+            }
+        }
     }
 }
