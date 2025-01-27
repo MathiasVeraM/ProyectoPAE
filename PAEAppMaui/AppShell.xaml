@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="PAEAppMaui.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:PAEAppMaui.Views"
-    xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
-    x:DataType="viewmodel:AppShellViewModel"
-    Shell.TabBarIsVisible="False"
-    Shell.FlyoutBehavior="Disabled"
-    Title="PAEAppMaui">
+<Shell  x:Class="PAEAppMaui.AppShell"
+        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:views="clr-namespace:PAEAppMaui.Views"
+        xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
+        x:DataType="viewmodel:AppShellViewModel"
+        Shell.TabBarIsVisible="True"
+        Shell.FlyoutBehavior="Flyout"
+        Title="PAEAppMaui">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:LoginPage}"
         Route="LoginPage"
-        FlyoutItemIsVisible="False" />
+        FlyoutItemIsVisible="False" 
+        Shell.FlyoutBehavior="Disabled"/>
 
     <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Publicaciones" Icon="home.png" ContentTemplate="{DataTemplate views:PublicationsPage}"></ShellContent>
