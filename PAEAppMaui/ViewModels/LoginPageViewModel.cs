@@ -36,7 +36,7 @@ namespace PAEAppMaui.ViewModels
                         string userDetails = JsonConvert.SerializeObject(user);
                         Preferences.Set(nameof(App.user), userDetails);
                         App.user = user;
-                        await Shell.Current.GoToAsync(nameof(PublicationsPage));
+                        await Shell.Current.GoToAsync("PublicationsPage");
                     }
                     else
                     {
@@ -62,7 +62,7 @@ namespace PAEAppMaui.ViewModels
         {
             try
             {
-                await Shell.Current.GoToAsync(nameof(RegisterPage));
+                await Shell.Current.GoToAsync("RegisterPage");
             }
             catch(Exception ex)
             {

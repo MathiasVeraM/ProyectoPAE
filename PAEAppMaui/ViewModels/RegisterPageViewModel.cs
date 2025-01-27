@@ -31,7 +31,8 @@ namespace PAEAppMaui.ViewModels
                 if (user != null)
                 {
                     await Shell.Current.DisplayAlert("Éxito", "Usuario registrado correctamente.", "OK");
-                    await Shell.Current.GoToAsync(nameof(LoginPage));
+
+                    await Shell.Current.GoToAsync("LoginPage");
                 }
                 else
                 {
@@ -49,7 +50,7 @@ namespace PAEAppMaui.ViewModels
         {
             try
             {
-                await Shell.Current.GoToAsync(nameof(LoginPage));
+                await Shell.Current.GoToAsync("..");
             }
             catch (Exception ex)
             {

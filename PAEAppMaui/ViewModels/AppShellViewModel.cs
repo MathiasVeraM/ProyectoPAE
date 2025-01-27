@@ -12,7 +12,7 @@ namespace PAEAppMaui.ViewModels
             if (Preferences.ContainsKey(nameof(App.user)))
             {
                 Preferences.Remove(nameof(App.user));
-                await Shell.Current.GoToAsync(nameof(LoginPage));
+                await Shell.Current.GoToAsync("..");
             }
         }
     }
