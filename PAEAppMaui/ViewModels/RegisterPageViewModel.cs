@@ -32,7 +32,7 @@ namespace PAEAppMaui.ViewModels
                 {
                     await Shell.Current.DisplayAlert("Éxito", "Usuario registrado correctamente.", "OK");
 
-                    await Shell.Current.GoToAsync("LoginPage");
+                    await Shell.Current.GoToAsync("..");
                 }
                 else
                 {
