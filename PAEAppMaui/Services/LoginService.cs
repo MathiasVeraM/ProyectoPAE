@@ -22,7 +22,7 @@ namespace PAEAppMaui.Services
             }
             catch(Exception ex)
             {
-                await Shell.Current.DisplayAlert("Error" + ex.Message + "Ok");
+                await Shell.Current.DisplayAlert("Error", ex.Message,"Ok");
                 return null;
             }
         }
