@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using PAEAppMaui.ViewModels;
+using PAEAppMaui.Views;
 
 namespace PAEAppMaui
 {
@@ -14,6 +16,9 @@ namespace PAEAppMaui
                     fonts.AddFont("Poppins-Regular.ttf", "PoppinsRegular");
                     fonts.AddFont("Poppins-SemiBold.ttf", "PoppinsSemiBold");
                 });
+            builder.Services.AddSingleton<PublicationsPage>();
+            builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<LoginPageViewModel>();
 
 #if DEBUG
     		builder.Logging.AddDebug();
