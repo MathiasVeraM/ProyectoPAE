@@ -39,7 +39,10 @@ namespace PAEAppMaui.ViewModels
                         App.user = user;
                         await Shell.Current.GoToAsync(nameof(PublicationsPage));
                     }
-                    await Shell.Current.DisplayAlert("Error", "El email o contraseña estan equivocados", "Ok");
+                    else
+                    {
+                        await Shell.Current.DisplayAlert("Error", "El email o contraseña estan equivocados", "Ok");
+                    }
                 }
                 else
                 {
