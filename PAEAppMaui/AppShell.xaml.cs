@@ -1,4 +1,5 @@
 ﻿using PAEAppMaui.Views;
+using PAEAppMaui.ViewModels;
 
 namespace PAEAppMaui
 {
@@ -7,6 +8,7 @@ namespace PAEAppMaui
         public AppShell()
         {
             InitializeComponent();
+            BindingContext = new AppShellViewModel();
             Routing.RegisterRoute(nameof(PublicationsPage), typeof(PublicationsPage));
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));

@@ -19,7 +19,6 @@ namespace PAEAppMaui.ViewModels
         readonly ILoginInterface loginInterface = new LoginService();
 
         [RelayCommand]
-
         public async void SignIn()
         {
             // if(Connectivity.Current.NetworkAccess == NetworkAccess.Internet) -- verificar conexion a internet

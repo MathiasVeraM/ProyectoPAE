@@ -3,14 +3,28 @@
     x:Class="PAEAppMaui.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:PAEAppMaui.Views"
+    xmlns:views="clr-namespace:PAEAppMaui.Views"
+    xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
+    x:DataType="viewmodel:AppShellViewModel"
+    Shell.TabBarIsVisible="False"
     Shell.FlyoutBehavior="Disabled"
     Title="PAEAppMaui">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage"
+        FlyoutItemIsVisible="False" />
 
+    <FlyoutItem Route="MainPage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Publicaciones" Icon="home.png" ContentTemplate="{DataTemplate views:PublicationsPage}"></ShellContent>
+        <ShellContent Title="Sobre Nosotros" Icon="about_us.png" ContentTemplate="{DataTemplate views:AboutPage}"></ShellContent>
+        
+    </FlyoutItem>  
 
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Command="{Binding LogoutCommand}" BackgroundColor="Green" Text="Logout" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 </Shell>
