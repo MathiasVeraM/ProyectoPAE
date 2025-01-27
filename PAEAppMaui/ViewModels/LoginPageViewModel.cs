@@ -56,5 +56,20 @@ namespace PAEAppMaui.ViewModels
             }
 
         }
+
+        [RelayCommand]
+        public async void Register()
+        {
+            try
+            {
+                await Shell.Current.GoToAsync(nameof(RegisterPage));
+            }
+            catch(Exception ex)
+            {
+                await Shell.Current.DisplayAlert("Error", "No es posible ir a nuevo registro" + ex.Message, "Ok");
+                return;
+            }
+        }
+
     }
 }

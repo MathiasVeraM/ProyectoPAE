@@ -5,7 +5,6 @@
         xmlns:views="clr-namespace:PAEAppMaui.Views"
         xmlns:viewmodel="clr-namespace:PAEAppMaui.ViewModels"
         x:DataType="viewmodel:AppShellViewModel"
-        Shell.TabBarIsVisible="True"
         Shell.FlyoutBehavior="Flyout"
         Title="PAEAppMaui">
 
