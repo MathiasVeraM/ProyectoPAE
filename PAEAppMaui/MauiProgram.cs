@@ -18,10 +18,12 @@ namespace PAEAppMaui
                 });
             builder.Services.AddSingleton<PublicationsPage>();
             builder.Services.AddSingleton<LoginPage>();
+            builder.Services.AddSingleton<AboutPage>();
+            builder.Services.AddSingleton<RegisterPage>();
             builder.Services.AddSingleton<LoginPageViewModel>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

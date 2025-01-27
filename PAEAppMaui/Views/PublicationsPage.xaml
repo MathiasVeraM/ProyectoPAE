@@ -1,12 +1,133 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PAEAppMaui.Views.PublicationsPage"
-             Title="PublicationsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             x:Class="ProyectoPAE.PublicationsPage"
+             Title="Publicaciones">
+<ScrollView>
+
+    
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Crear Publicación"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#3a362b" />
+
+            <Frame BackgroundColor="#F0F0F0"
+                   HeightRequest="200"
+                   HorizontalOptions="Fill">
+                <Image x:Name="MascotaImagen"
+                       Aspect="Fill"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </Frame>
+            
+            <Button Text="Seleccionar Imagen"
+                    Clicked="SeleccionarImagenClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#374e1d"
+                    TextColor="White" />
+
+            <Label Text="Nombre de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
+            <Entry x:Name="NombreEntry"
+                   Placeholder="Nombre"
+                   FontSize="16" />
+        
+            <Label Text="Raza de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+        
+            <Entry x:Name="RazaEntry"
+                   Placeholder="Raza"
+                   FontSize="16" />
+
+            <Picker x:Name="SexoPicker"
+                    Title="Sexo"
+                    FontSize="16"
+                    TextColor="#3a362b">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Macho</x:String>
+                        <x:String>Hembra</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Edad de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
+            <Entry x:Name="EdadEntry"
+                   Placeholder="Edad (en años)"
+                   Keyboard="Numeric"
+                   FontSize="16" />
+
+            <Label Text="Peso de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
+            <Entry x:Name="PesoEntry"
+                   Placeholder="Peso (en kg)"
+                   Keyboard="Numeric"
+                   FontSize="16" />
+
+            <Picker x:Name="TamañoPicker"
+                    Title="Tamaño"
+                    FontSize="16"
+                    TextColor="#3a362b">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pequeño</x:String>
+                        <x:String>Mediano</x:String>
+                        <x:String>Grande</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Picker x:Name="EsterilizacionPicker"
+                    Title="¿Esterilizado?"
+                    FontSize="16"
+                    TextColor="#3a362b">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sí</x:String>
+                        <x:String>No</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Enfermedades de la mascota"
+                    FontSize="16"
+                    HorizontalOptions="Start"
+                    TextColor="#3a362b"/>
+
+            <Entry x:Name="EnfermedadesEntry"
+                   Placeholder="Enfermedades"
+                   FontSize="16" />
+
+            <Label Text="Descripcion del comportamiento de la mascota"
+                   FontSize="16"
+                   HorizontalOptions="Start"
+                   TextColor="#3a362b"/>
+
+            <Editor x:Name="DescripcionEditor"
+                    Placeholder="Descripción del comportamiento"
+                    FontSize="16"
+                    HeightRequest="100" />
+
+            <Button Text="Guardar Publicación"
+                    Clicked="GuardarPublicacionClicked"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#374e1d"
+                    TextColor="White"
+                    FontAttributes="Bold" />
     </VerticalStackLayout>
+</ScrollView>
 </ContentPage>
